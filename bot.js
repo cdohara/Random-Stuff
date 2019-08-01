@@ -46,7 +46,7 @@ client.on("message", async message => {
             headers: {"X-Naver-Client-Id":client_id, "X-Naver-Client-Secret": client_secret},
         };
         request.post(options, function (error, response, body) {
-            if (error) console.log("SMT Translation Error: "+error);
+            if (error) console.log("NMT Translation Error: "+error);
             else console.log("Successfully translated using NMT!");
             var result = JSON.parse(body);
             message.channel.send("Result: " + result.message.result.translatedText);
@@ -71,7 +71,7 @@ client.on("message", async message => {
             headers: {"X-Naver-Client-Id":client_id, "X-Naver-Client-Secret": client_secret},
         };
         request.post(options, function (error, response, body) {
-            if (error) console.log("NMT Translation Error: "+error);
+            if (error) console.log("SMT Translation Error: "+error);
             else console.log("Successfully translated using SMT!");
             var result = JSON.parse(body);
             message.channel.send("Result: " + result.message.result.translatedText);
